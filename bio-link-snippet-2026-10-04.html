@@ -1,0 +1,299 @@
+<style>
+
+/* Schriften selbst gehostet — keine Verbindung zu Google beim Aufruf. */
+@font-face{font-family:'Archivo';font-style:normal;font-weight:500;
+  font-display:swap;src:url(https://blickhoehe-design.github.io/blickhoehe-bilder/schrift/archivo-500-latin-ext.woff2) format('woff2');
+  unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Archivo';font-style:normal;font-weight:500;
+  font-display:swap;src:url(https://blickhoehe-design.github.io/blickhoehe-bilder/schrift/archivo-500-latin.woff2) format('woff2');
+  unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Archivo';font-style:normal;font-weight:600;
+  font-display:swap;src:url(https://blickhoehe-design.github.io/blickhoehe-bilder/schrift/archivo-600-latin-ext.woff2) format('woff2');
+  unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Archivo';font-style:normal;font-weight:600;
+  font-display:swap;src:url(https://blickhoehe-design.github.io/blickhoehe-bilder/schrift/archivo-600-latin.woff2) format('woff2');
+  unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Spectral';font-style:normal;font-weight:300;
+  font-display:swap;src:url(https://blickhoehe-design.github.io/blickhoehe-bilder/schrift/spectral-300-latin-ext.woff2) format('woff2');
+  unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Spectral';font-style:normal;font-weight:300;
+  font-display:swap;src:url(https://blickhoehe-design.github.io/blickhoehe-bilder/schrift/spectral-300-latin.woff2) format('woff2');
+  unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Spectral';font-style:normal;font-weight:400;
+  font-display:swap;src:url(https://blickhoehe-design.github.io/blickhoehe-bilder/schrift/spectral-400-latin-ext.woff2) format('woff2');
+  unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Spectral';font-style:normal;font-weight:400;
+  font-display:swap;src:url(https://blickhoehe-design.github.io/blickhoehe-bilder/schrift/spectral-400-latin.woff2) format('woff2');
+  unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+
+  #bh img{max-width:100%}
+
+  :root{
+    --grund:#E9EBE5; --flaeche:#F2F3EF; --ink:#0F1A17; --gedaempft:#59655D;
+    --akzent:#2C5F63; --linie:rgba(15,26,23,.15); --linie-stark:rgba(15,26,23,.3);
+    --serif:"Spectral",Georgia,"Times New Roman",serif;
+    --sans:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --grund:#0F1A17; --flaeche:#1E332E; --ink:#E9EBE5; --gedaempft:#9AA79E;
+      --akzent:#7FB0B2; --linie:rgba(154,167,158,.22); --linie-stark:rgba(154,167,158,.44);
+    }
+  }
+  :root[data-theme="dark"]{
+    --grund:#0F1A17; --flaeche:#1E332E; --ink:#E9EBE5; --gedaempft:#9AA79E;
+    --akzent:#7FB0B2; --linie:rgba(154,167,158,.22); --linie-stark:rgba(154,167,158,.44);
+  }
+  #bh,#bh *{box-sizing:border-box}
+  body{background:var(--grund)!important;margin:0}
+  #bh{background:var(--grund);color:var(--ink);font-family:var(--serif);
+    font-weight:300;font-size:17.5px;line-height:1.64;margin:0;text-align:left;width:100%}
+  #bh .bahn{max-width:620px;margin:0 auto;padding:0 26px}
+
+  #bh .zeichen{position:relative;height:1px;background:var(--akzent);opacity:.55}
+  #bh .zeichen i{position:absolute;top:-4px;width:9px;height:9px;border:1px solid var(--akzent);
+    border-radius:50%;background:var(--grund);box-sizing:border-box}
+  #bh .zeichen i:nth-child(1){left:0} .zeichen i:nth-child(2){left:18px}
+  #bh .zeichen i:nth-child(3){right:18px} .zeichen i:nth-child(4){right:0}
+
+  #bh header{padding:82px 0 0}
+  #bh .marke{font-family:var(--sans);font-weight:500;font-size:clamp(24px,6.5vw,34px);
+    letter-spacing:.2em;margin:0 0 26px}
+  #bh h1{font-size:clamp(27px,6.4vw,38px);font-weight:400;line-height:1.3;
+    margin:34px 0 0;max-width:19ch;text-wrap:balance}
+
+  #bh section{padding:52px 0;border-top:1px solid var(--linie)}
+  #bh h2{font-family:var(--sans);font-size:11.5px;font-weight:600;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--gedaempft);margin:0 0 20px}
+  #bh p{margin:0 0 16px;max-width:60ch}
+  #bh p:last-child{margin-bottom:0}
+  #bh strong{font-weight:500}
+  #bh .lead{font-size:20px;line-height:1.55;color:var(--ink)}
+
+  #bh .saetze{list-style:none;margin:0;padding:0}
+  #bh .saetze li{padding:14px 0;border-bottom:1px solid var(--linie);font-size:18px;line-height:1.45}
+  #bh .saetze li:last-child{border-bottom:none}
+  #bh .saetze li::before{content:"";display:inline-block;width:15px;height:1px;
+    background:var(--akzent);vertical-align:middle;margin-right:14px}
+
+  #bh .schritte{list-style:none;margin:0;padding:0;counter-reset:s}
+  #bh .schritte li{counter-increment:s;padding:20px 0 20px 52px;position:relative;
+    border-top:1px solid var(--linie)}
+  #bh .schritte li:first-child{border-top:none}
+  #bh .schritte li::before{content:counter(s);position:absolute;left:0;top:22px;
+    font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.1em;color:var(--akzent)}
+  #bh .schritte b{display:block;font-weight:500;font-size:19px;margin-bottom:4px}
+  #bh .schritte span{color:var(--gedaempft);font-size:16px;line-height:1.5}
+
+  #bh .grenze{border-left:2px solid var(--akzent);padding:2px 0 2px 22px}
+  #bh .grenze p{font-size:16.5px;color:var(--gedaempft)}
+  #bh .grenze p:first-child{color:var(--ink)}
+
+  #bh .kontakt{background:var(--flaeche);padding:34px 30px;margin-top:8px}
+  #bh .kontakt .code{font-family:var(--sans);font-size:clamp(30px,9vw,44px);font-weight:600;
+    letter-spacing:.22em;color:var(--akzent);margin:0 0 14px;line-height:1}
+  #bh .kontakt p{font-size:16.5px;margin-bottom:0;color:var(--gedaempft)}
+  #bh .kontakt p.stark{color:var(--ink);font-size:18px;margin-bottom:14px}
+
+  #bh footer{padding:44px 0 92px;color:var(--gedaempft);font-family:var(--sans);
+    font-size:11.5px;letter-spacing:.05em;line-height:1.9}
+  #bh a{color:var(--akzent)}
+
+  #bh .anfrageform{background:var(--flaeche);padding:28px 26px;display:grid;
+    grid-template-columns:1fr 1fr;gap:18px 20px}
+  @media(max-width:560px){#bh .anfrageform{grid-template-columns:1fr}}
+  #bh .af-breit{grid-column:1/-1}
+  #bh .af-feld label{display:block;font-family:var(--sans);font-size:9.5px;font-weight:600;
+    letter-spacing:.13em;text-transform:uppercase;color:var(--gedaempft);margin-bottom:6px}
+  #bh .af-feld input,#bh .af-feld textarea{width:100%;background:transparent;color:var(--ink);
+    border:none;border-bottom:1px solid var(--linie-stark);padding:5px 0;outline:none;
+    font-family:var(--serif);font-weight:300;font-size:17px;line-height:1.5;resize:vertical}
+  #bh .af-feld input:focus,#bh .af-feld textarea:focus{border-bottom-color:var(--akzent)}
+  #bh .af-knopfe{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+  #bh .anfrageform button{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.13em;
+    text-transform:uppercase;padding:13px 24px;border-radius:2px;cursor:pointer;
+    border:1px solid var(--akzent);background:var(--akzent);color:var(--grund)}
+  #bh .anfrageform button.leise{background:transparent;color:var(--akzent)}
+  #bh .anfrageform button:focus-visible{outline:2px solid var(--akzent);outline-offset:3px}
+  #bh .af-meldung{grid-column:1/-1;font-family:var(--sans);font-size:11.5px;letter-spacing:.05em;
+    color:var(--akzent);min-height:1.2em;margin:0}
+  #bh .af-hinweis{grid-column:1/-1;font-size:14.5px;color:var(--gedaempft);margin:0;max-width:58ch}
+  #bh footer a{color:var(--gedaempft);text-decoration:underline;text-underline-offset:3px}
+  #bh footer a:hover{color:var(--akzent)}
+
+  /* Bewegung: ruhig, und nur ohne 'reduzierte Bewegung' */
+  #bh .reel{margin:6px 0 0;width:min(100%,300px);aspect-ratio:9/16;background:#0F1A17;
+    border:1px solid var(--linie);overflow:hidden}
+  #bh .reel video{display:block;width:100%;height:100%;object-fit:cover}
+  #bh .reel-notiz{font-family:var(--sans);font-size:11px;letter-spacing:.08em;color:var(--gedaempft);
+    margin:12px 0 0}
+  @media (prefers-reduced-motion: no-preference){
+    .js #bh header .marke,.js #bh header .zeichen,.js #bh header h1{animation:auf .9s ease both}
+    .js #bh header .zeichen{animation-delay:.15s}
+    .js #bh header h1{animation-delay:.3s}
+    .js #bh section{opacity:0;transform:translateY(14px);transition:opacity .9s ease,transform .9s ease}
+    .js #bh section.sichtbar{opacity:1;transform:none}
+    @keyframes auf{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  }
+
+  #bh h1,#bh h2,#bh p,#bh li,#bh b,#bh span,#bh label{font-family:inherit}
+  #bh h2,#bh .marke,#bh .code,#bh label,#bh footer{font-family:var(--sans)}
+  #bh h1{font-family:var(--serif);color:var(--ink)}
+</style>
+<script>document.documentElement.className+=' js';</script>
+<div id="bh"><div class="bahn">
+
+<header>
+  <p class="marke">BLICKHÖHE</p>
+  <div class="zeichen"><i></i><i></i><i></i><i></i></div>
+  <h1>Für Frauen, die nichts mehr beweisen müssen.</h1>
+  <p class="lead" style="margin-top:26px">Vertrauliche Begleitung beim Dating, aus Sicht eines Mannes.</p>
+  <p class="lead">Ich habe viele Frauen erfolgreich in erfüllte Beziehungen begleitet. Erst als Hobby, heute professionell.</p>
+</header>
+
+<section>
+  <h2>Der Einstieg</h2>
+  <div class="kontakt">
+    <p class="code">DISKRET</p>
+    <p class="stark">Schreib DISKRET auf Instagram.</p>
+    <p>Du bekommst den Kurzguide „Diskret suchen, wenn dich jeder kennt“, kostenlos und sofort. Du musst nichts über dich erzählen.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Worum es geht</h2>
+  <p class="lead">Du bekommst die Perspektive, die dir sonst niemand ehrlich gibt: die männliche.</p>
+  <p>Deine Freundinnen sagen sie dir nicht, weil sie loyal sind. Männer sagen sie dir nicht, weil sie in dem Moment noch Interesse haben.</p>
+  <p>Ich bin ein Mann ohne Gesicht, und genau das ist der Vorteil: Du musst vor mir nichts darstellen.</p>
+  <p>Ich beschreibe beobachtbares Verhalten: wann Männer zurückweichen, warum, und welche deiner Standards halten und welche nur Abstand herstellen. Keine Deutung deiner Person. Die Stimme in den Reels ist KI. Die Gedanken sind meine.</p>
+</section>
+
+<section>
+  <h2>Wie es abläuft</h2>
+  <ol class="schritte">
+    <li>
+      <b>Du schreibst</b>
+      <span>DISKRET für den Kurzguide, oder ein paar Zeilen zu deiner Situation.</span>
+    </li>
+    <li>
+      <b>Du bekommst eine vertrauliche Einschätzung</b>
+      <span>Deine Situation, eine klare Einschätzung, die nächsten Schritte. Schriftlich, in der Nachricht.</span>
+    </li>
+    <li>
+      <b>Wenn du weitermachen willst</b>
+      <span>Dann sprechen wir darüber, was zu dir passt. Wenn nicht, sage ich dir das auch. Ob und wann, entscheidest du.</span>
+    </li>
+  </ol>
+</section>
+
+<section>
+  <h2>Was danach kommen kann</h2>
+  <p><strong>STANDORT.</strong> Zwanzig Fragen beantwortest du schriftlich. Daraus entsteht eine Analyse: was ich sehe, dein Muster, wo dein Pool wirklich ist, welche Standards halten, und drei Änderungen für die nächsten neunzig Tage.</p>
+  <p><strong>Begleitung.</strong> Ein kurzer Draht über Threema (bevorzugt) oder WhatsApp, wenn eine Situation ansteht und du eine zweite Einschätzung willst. Ich bereite dich vor und ordne danach ein, mit festem Antwortfenster.</p>
+</section>
+
+<section>
+  <h2>Diskretion</h2>
+  <p>Der erste Kontakt läuft über Instagram, die Begleitung selbst über Threema (bevorzugt) oder WhatsApp. Ich führe keine Kundenliste, die deinen Namen mit dem Thema verbindet. Nach außen tritt nur die Marke auf, die Zusammenarbeit läuft schriftlich, ohne Anruf und ohne Video. Du musst dich nirgends zeigen.</p>
+  <p><strong>Was hier besprochen wird, bleibt hier.</strong></p>
+</section>
+
+<section>
+  <h2>Was ich nicht mache</h2>
+  <div class="grenze">
+    <p>Kein Ergebnisversprechen. Keine Vermittlung. Keine Therapie, keine Paarberatung. Bei akuter Krise verweise ich weiter.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Wenn du anfangen willst</h2>
+  <div class="kontakt">
+    <p class="code">DISKRET</p>
+    <p class="stark">Schreib DISKRET. Oder ein paar Zeilen, worum es bei dir geht.</p>
+    <p>Ob und wann, entscheidest du.</p>
+  </div>
+</section>
+
+
+<section id="anfrage">
+  <h2>Anfrage</h2>
+  <p>Wenn du magst, schreib mir vorab ein paar Zeilen. Du kannst auch einfach <strong>DISKRET</strong> auf Instagram schicken, das reicht genauso.</p>
+  <div class="anfrageform">
+    <div class="af-feld"><label for="a_name">Name</label><input type="text" id="a_name" autocomplete="name"></div>
+    <div class="af-feld"><label for="a_mail">E-Mail</label><input type="email" id="a_mail" autocomplete="email"></div>
+    <div class="af-feld"><label for="a_ort">Ort</label><input type="text" id="a_ort" autocomplete="address-level2"></div>
+    <div class="af-feld af-breit"><label for="a_lage">Deine Situation in ein paar Zeilen</label><textarea id="a_lage" rows="4"></textarea></div>
+    <div class="af-knopfe">
+      <button type="button" id="a_mailen">Per Mail senden</button>
+      <button type="button" id="a_kopieren" class="leise">Text kopieren</button>
+    </div>
+    <p class="af-meldung" id="a_meldung"></p>
+    <p class="af-hinweis">Diese Seite sendet nichts von selbst und speichert nichts. „Per Mail senden“ öffnet dein eigenes Mailprogramm mit dem fertigen Text, abgeschickt wird er erst von dir. Es läuft kein Formulardienst und kein Tracking mit.</p>
+  </div>
+</section>
+
+<div class="zeichen"><i></i><i></i><i></i><i></i></div>
+
+<footer>
+  BLICKHÖHE. Vertrauliche Begleitung beim Dating, aus Sicht eines Mannes.<br>
+  Keine Therapie, keine Vermittlung, kein Ergebnisversprechen.
+</footer>
+
+</div></div>
+<script>
+(function(){
+  var f = ["a_name","a_mail","a_ort","a_lage"];
+  function text(){
+    var v = {};
+    f.forEach(function(id){ v[id] = (document.getElementById(id).value || "").trim(); });
+    return ["Anfrage über blickhoehe","",
+      "Name: " + (v.a_name || "-"),
+      "E-Mail: " + (v.a_mail || "keine Angabe"),
+      "Ort: " + (v.a_ort || "keine Angabe"), "",
+      "Lage:", v.a_lage || "keine Angabe"].join("\n");
+  }
+  function melden(t){
+    var m = document.getElementById("a_meldung");
+    m.textContent = t;
+    setTimeout(function(){ if (m.textContent === t) m.textContent = ""; }, 6000);
+  }
+  document.getElementById("a_mailen").addEventListener("click", function(){
+    window.location.href = "mailto:blickhoehe@gmail.com?subject="
+      + encodeURIComponent("Anfrage, BLICKHÖHE") + "&body=" + encodeURIComponent(text());
+    melden("Dein Mailprogramm öffnet sich. Abgeschickt wird erst von dir.");
+  });
+  document.getElementById("a_kopieren").addEventListener("click", function(){
+    var t = text();
+    function ersatz(){
+      var e = document.createElement("textarea");
+      e.value = t; e.style.position = "fixed"; e.style.opacity = "0";
+      document.body.appendChild(e); e.select();
+      try { document.execCommand("copy"); melden("Kopiert."); }
+      catch (x) { melden("Kopieren hat nicht geklappt."); }
+      document.body.removeChild(e);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(t).then(function(){ melden("Kopiert."); }, ersatz);
+    } else { ersatz(); }
+  });
+})();
+</script>
+<script>
+(function(){
+  /* Nur auf der öffentlichen Seite: leere Fläche des Seitenbauers ausblenden. Im Editor (systeme.io) nicht, sonst verschwindet dessen Oberfläche. */
+  if (location.hostname !== "systeme.io") {
+    var st = document.createElement("style");
+    st.textContent = "#app>div:first-child{display:none!important}";
+    document.head.appendChild(st);
+  }
+  var abschnitte = document.querySelectorAll("#bh section");
+  if (!("IntersectionObserver" in window)) {
+    abschnitte.forEach(function(s){ s.classList.add("sichtbar"); });
+    return;
+  }
+  var io = new IntersectionObserver(function(e){
+    e.forEach(function(x){ if (x.isIntersecting){ x.target.classList.add("sichtbar"); io.unobserve(x.target); } });
+  }, {rootMargin:"0px 0px -8% 0px"});
+  abschnitte.forEach(function(s){ io.observe(s); });
+})();
+</script>
